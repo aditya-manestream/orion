@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-hanken);
+  --font-display: var(--font-bricolage);
+  --font-mono: var(--font-jetbrains);
+
+  --color-navy-deep: #0b1728;
+  --color-navy-mid: #0e1d31;
+  --color-navy: #13243b;
+  --color-navy-card: #182f4c;
+  --color-navy-card-hover: #1b3350;
+
+  --color-rust: #c2622e;
+  --color-rust-dark: #a5501f;
+  --color-apricot: #e0916a;
+  --color-apricot-pale: #fbe7dc;
+
+  --color-ink-100: #ffffff;
+  --color-ink-200: #edf1f6;
+  --color-ink-300: #dce4ef;
+  --color-ink-400: #c4d0e0;
+  --color-ink-500: #b9c7d9;
+  --color-ink-600: #a9bad1;
+  --color-ink-700: #8fa1ba;
+  --color-ink-800: #7a8aa3;
+  --color-ink-900: #5f6e85;
+}
+
+@layer base {
+  /* Smooth scroll + anchor handling is owned by Lenis (see smooth-scroll.tsx) */
+
+  body {
+    background: var(--color-navy);
+    color: var(--color-ink-200);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: var(--color-apricot);
+  }
+
+  ::selection {
+    background: var(--color-rust);
+    color: #fff;
+  }
+}
