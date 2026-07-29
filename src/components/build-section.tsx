@@ -42,7 +42,11 @@ const SECTORS = [
   "Heavy engineering",
 ];
 
-export function BuildSection() {
+export function BuildSection({
+  kicker = "07 / What we build",
+}: {
+  kicker?: string;
+}) {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
@@ -51,7 +55,7 @@ export function BuildSection() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(340px,1fr))] items-start gap-[clamp(36px,4.4vw,72px)]">
           <Reveal>
             <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
-              07 / What we build
+              {kicker}
             </span>
             <h2 className="mt-3 text-balance font-display text-[clamp(32px,4.2vw,64px)] leading-none font-semibold tracking-[-0.025em] text-white">
               Five configurations, one engineering method

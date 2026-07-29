@@ -29,7 +29,7 @@ export function AssuranceSection() {
     <section id="assurance" className="bg-rust">
       <div className="mx-auto max-w-[1400px] px-6 py-[clamp(74px,9vw,132px)] sm:px-8 lg:px-16">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-[clamp(36px,4.4vw,72px)]">
-          <div className="flex h-full flex-col">
+          <Reveal className="flex h-full flex-col">
             <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-navy uppercase">
               08 / Assurance
             </span>
@@ -52,11 +52,12 @@ export function AssuranceSection() {
                 className="h-[clamp(120px,16vw,230px)] w-auto"
               />
             </div>
-          </div>
+          </Reveal>
           <div className="flex flex-col">
             {ASSURANCES.map((item, i) => (
-              <div
+              <Reveal
                 key={item.code}
+                delay={i * 0.08}
                 className={`grid grid-cols-[64px_1fr] items-start gap-[18px] border-t border-white/[0.32] py-[clamp(22px,2.4vw,30px)] ${
                   i === ASSURANCES.length - 1 ? "border-b" : ""
                 }`}
@@ -72,7 +73,7 @@ export function AssuranceSection() {
                     {item.body}
                   </p>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

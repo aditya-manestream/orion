@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Orion Developers
 
-## Getting Started
+Marketing website for **Orion Developers**, a pre-engineered building (PEB) company based in Nashik, Maharashtra. Built with Next.js (App Router), TypeScript, and Tailwind CSS v4.
 
-First, run the development server:
+## Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS v4, custom brand theme (navy / rust / apricot) in `src/app/globals.css`
+- **Fonts:** Bricolage Grotesque (display), Hanken Grotesk (body), JetBrains Mono (labels)
+- **Animation:** [Motion](https://motion.dev) for scroll-reveal and hover effects, [Lenis](https://github.com/darkroomengineering/lenis) for smooth scrolling
+
+## Structure
+
+- `/` — homepage (single-page brand story: practice, advantage, capabilities, anatomy, projects, process, assurance, contact)
+- `/about` — company story and credentials
+- `/capabilities` — systems showcase (design/supply/erection, advantage, anatomy, configurations)
+- `/projects` — full project gallery with sector filtering
+- `/projects/[slug]` — individual project case studies
+- `/contact` — structured project enquiry form
+
+Shared project data lives in `src/lib/projects.ts`. Reusable section/UI components are in `src/components/`.
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # production build
+npm run lint    # eslint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Content notes
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Real site photography lives in `public/photos/`; a few are reused across sections since only a limited set of project photos exists today. Swap in higher-resolution originals as they become available.
+- The contact form currently composes a `mailto:` link client-side (no backend). An automated enquiry email flow, project CMS, and CRM integration are scoped as future upgrades per the project proposal.

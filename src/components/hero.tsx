@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 import { PhotoPlaceholder } from "./photo-placeholder";
 
 const STATS = [
@@ -83,12 +84,12 @@ export function Hero() {
           custom={HERO_BASE_DELAY + 0.4}
           variants={fadeUp}
         >
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="bg-rust px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-colors hover:bg-rust-dark"
           >
             Request a quote
-          </a>
+          </Link>
           <a
             href="#projects"
             className="border border-white/[0.34] px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-colors hover:border-apricot hover:bg-apricot/10"

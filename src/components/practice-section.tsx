@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PhotoPlaceholder } from "./photo-placeholder";
 import { Reveal } from "./reveal";
 
@@ -45,6 +46,12 @@ export function PracticeSection() {
               </div>
             ))}
           </div>
+          <Link
+            href="/about"
+            className="mt-7 inline-block font-mono text-xs tracking-[0.16em] text-apricot uppercase hover:text-white"
+          >
+            More about Orion →
+          </Link>
         </Reveal>
         <Reveal delay={0.15} className="relative p-3.5">
           <div className="pointer-events-none absolute inset-0 border-2 border-rust" />

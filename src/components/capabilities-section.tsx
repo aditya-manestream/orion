@@ -36,14 +36,18 @@ const CAPABILITIES = [
   },
 ];
 
-export function CapabilitiesSection() {
+export function CapabilitiesSection({
+  kicker = "03 / Capabilities",
+}: {
+  kicker?: string;
+}) {
   return (
     <section id="capabilities" className="bg-navy">
       <div className="mx-auto max-w-[1400px] px-6 py-[clamp(74px,9vw,140px)] sm:px-8 lg:px-16">
         <Reveal className="flex flex-wrap items-end justify-between gap-7 border-b border-white/[0.14] pb-[clamp(24px,2.6vw,34px)]">
           <div>
             <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
-              03 / Capabilities
+              {kicker}
             </span>
             <h2 className="mt-3 text-balance font-display text-[clamp(32px,4.2vw,64px)] leading-none font-semibold tracking-[-0.025em] text-white">
               Engineered end to end

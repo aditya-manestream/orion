@@ -24,13 +24,17 @@ const SYSTEMS = [
   },
 ];
 
-export function AnatomySection() {
+export function AnatomySection({
+  kicker = "04 / Anatomy",
+}: {
+  kicker?: string;
+}) {
   return (
     <section id="anatomy" className="relative bg-navy-mid">
       <div className="mx-auto max-w-[1400px] px-6 py-[clamp(74px,9vw,140px)] sm:px-8 lg:px-16">
         <Reveal className="max-w-[60ch]">
           <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
-            04 / Anatomy
+            {kicker}
           </span>
           <h2 className="mt-3 text-balance font-display text-[clamp(32px,4.2vw,64px)] leading-none font-semibold tracking-[-0.025em] text-white">
             What a pre-engineered building is made of

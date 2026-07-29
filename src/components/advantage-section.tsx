@@ -33,7 +33,11 @@ const ADVANTAGES = [
   },
 ];
 
-export function AdvantageSection() {
+export function AdvantageSection({
+  kicker = "02 / The advantage",
+}: {
+  kicker?: string;
+}) {
   return (
     <section id="advantage" className="relative bg-navy-mid">
       <div
@@ -47,7 +51,7 @@ export function AdvantageSection() {
         <Reveal className="flex flex-wrap items-end justify-between gap-7 border-b border-white/[0.14] pb-[clamp(24px,2.6vw,34px)]">
           <div>
             <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
-              02 / The advantage
+              {kicker}
             </span>
             <h2 className="mt-3 text-balance font-display text-[clamp(32px,4.2vw,64px)] leading-none font-semibold tracking-[-0.025em] text-white">
               Why steel, why Orion

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function SiteFooter() {
   return (
@@ -35,21 +36,24 @@ export function SiteFooter() {
             Explore
           </span>
           <div className="mt-5 flex flex-col gap-3">
-            <a href="#practice" className="text-[15px] text-ink-400">
+            <Link href="/about" className="text-[15px] text-ink-400">
               About Orion
-            </a>
-            <a href="#capabilities" className="text-[15px] text-ink-400">
+            </Link>
+            <Link href="/capabilities" className="text-[15px] text-ink-400">
               Capabilities
-            </a>
-            <a href="#anatomy" className="text-[15px] text-ink-400">
+            </Link>
+            <Link
+              href="/capabilities#anatomy"
+              className="text-[15px] text-ink-400"
+            >
               PEB anatomy
-            </a>
-            <a href="#projects" className="text-[15px] text-ink-400">
+            </Link>
+            <Link href="/projects" className="text-[15px] text-ink-400">
               Projects
-            </a>
-            <a href="#process" className="text-[15px] text-ink-400">
+            </Link>
+            <Link href="/#process" className="text-[15px] text-ink-400">
               Process
-            </a>
+            </Link>
           </div>
         </div>
         <div>
@@ -57,21 +61,36 @@ export function SiteFooter() {
             We build
           </span>
           <div className="mt-5 flex flex-col gap-3">
-            <a href="#build" className="text-[15px] text-ink-400">
+            <Link
+              href="/capabilities#build"
+              className="text-[15px] text-ink-400"
+            >
               Pre-engineered buildings
-            </a>
-            <a href="#build" className="text-[15px] text-ink-400">
+            </Link>
+            <Link
+              href="/capabilities#build"
+              className="text-[15px] text-ink-400"
+            >
               Industrial warehouses
-            </a>
-            <a href="#build" className="text-[15px] text-ink-400">
+            </Link>
+            <Link
+              href="/capabilities#build"
+              className="text-[15px] text-ink-400"
+            >
               Manufacturing facilities
-            </a>
-            <a href="#build" className="text-[15px] text-ink-400">
+            </Link>
+            <Link
+              href="/capabilities#build"
+              className="text-[15px] text-ink-400"
+            >
               Commercial steel hubs
-            </a>
-            <a href="#build" className="text-[15px] text-ink-400">
+            </Link>
+            <Link
+              href="/capabilities#build"
+              className="text-[15px] text-ink-400"
+            >
               Roofing &amp; cladding
-            </a>
+            </Link>
           </div>
         </div>
         <div>
@@ -95,6 +114,12 @@ export function SiteFooter() {
             >
               orionpeb@gmail.com
             </a>
+            <Link
+              href="/contact"
+              className="text-[15px] text-apricot hover:text-white"
+            >
+              Send a project enquiry →
+            </Link>
           </div>
         </div>
       </div>

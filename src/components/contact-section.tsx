@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { Reveal } from "./reveal";
+
 export function ContactSection() {
   return (
     <section id="contact" className="relative overflow-hidden bg-navy">
@@ -9,7 +12,7 @@ export function ContactSection() {
         }}
       />
       <div className="relative mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(340px,1fr))] items-center gap-[clamp(40px,5vw,80px)] px-6 py-[clamp(80px,10vw,150px)] sm:px-8 lg:px-16">
-        <div>
+        <Reveal>
           <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
             09 / Get started
           </span>
@@ -21,12 +24,12 @@ export function ContactSection() {
             with a budget, a schedule and a preliminary design.
           </p>
           <div className="mt-[clamp(28px,3.2vw,44px)] flex flex-wrap gap-4">
-            <a
-              href="mailto:orionpeb@gmail.com"
+            <Link
+              href="/contact"
               className="bg-rust px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-colors hover:bg-rust-dark"
             >
               Start a project
-            </a>
+            </Link>
             <a
               href="tel:+917020475455"
               className="border border-white/[0.34] px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-colors hover:border-apricot hover:bg-apricot/10"
@@ -34,9 +37,9 @@ export function ContactSection() {
               Call the office
             </a>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="border border-white/[0.12] bg-navy-mid p-[clamp(30px,3.4vw,48px)]">
+        <Reveal delay={0.15} className="border border-white/[0.12] bg-navy-mid p-[clamp(30px,3.4vw,48px)]">
           <span className="font-mono text-[11px] tracking-[0.24em] text-apricot uppercase">
             Orion Developers
           </span>
@@ -101,7 +104,7 @@ export function ContactSection() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

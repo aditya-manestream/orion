@@ -1,14 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
-  { href: "#practice", label: "About" },
-  { href: "#capabilities", label: "Capabilities" },
-  { href: "#projects", label: "Projects" },
-  { href: "#process", label: "Process" },
-  { href: "#build", label: "What we build" },
+  { href: "/about", label: "About" },
+  { href: "/capabilities", label: "Capabilities" },
+  { href: "/projects", label: "Projects" },
 ];
 
 export function SiteHeader() {
@@ -61,7 +60,7 @@ export function SiteHeader() {
           style={{ opacity: scrolled ? 1 : 0 }}
         />
         <div className="relative mx-auto flex h-[clamp(70px,6vw,88px)] max-w-[1400px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-14">
-          <a href="#top" className="flex flex-none items-center gap-3">
+          <Link href="/" className="flex flex-none items-center gap-3">
             <Image
               src="/orion-logo.png"
               alt="Orion Developers"
@@ -78,23 +77,23 @@ export function SiteHeader() {
                 Developers
               </span>
             </span>
-          </a>
+          </Link>
           <nav className="flex flex-wrap items-center justify-end gap-4 sm:gap-6 lg:gap-8">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="hidden font-mono text-xs tracking-[0.14em] text-ink-400 uppercase hover:text-white md:inline"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="bg-rust px-[22px] py-[13px] font-mono text-xs tracking-[0.16em] text-white uppercase transition-colors hover:bg-rust-dark"
             >
               Request a quote
-            </a>
+            </Link>
           </nav>
         </div>
         <div
