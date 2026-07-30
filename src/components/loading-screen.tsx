@@ -1,43 +1,35 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-type Member = { d: string; delay: number; tone: "primary" | "secondary" };
-
-const MEMBERS: Member[] = [
-  // ground line
-  { d: "M20 200 H380", delay: 0, tone: "secondary" },
-  // base plates
-  { d: "M98 200 H122", delay: 0.12, tone: "secondary" },
-  { d: "M278 200 H302", delay: 0.12, tone: "secondary" },
-  // columns
-  { d: "M110 200 V90", delay: 0.32, tone: "primary" },
-  { d: "M290 200 V90", delay: 0.32, tone: "primary" },
-  // rafters
-  { d: "M110 90 L200 40", delay: 0.78, tone: "primary" },
-  { d: "M290 90 L200 40", delay: 0.78, tone: "primary" },
-  // purlins, left
-  { d: "M129.1 71.4 L135.9 83.6", delay: 1.16, tone: "secondary" },
-  { d: "M151.6 58.9 L158.4 71.1", delay: 1.24, tone: "secondary" },
-  { d: "M174.1 46.4 L180.9 58.6", delay: 1.32, tone: "secondary" },
-  // purlins, right
-  { d: "M270.9 71.4 L264.1 83.6", delay: 1.16, tone: "secondary" },
-  { d: "M248.4 58.9 L241.6 71.1", delay: 1.24, tone: "secondary" },
-  { d: "M225.9 46.4 L219.1 58.6", delay: 1.32, tone: "secondary" },
-  // ridge cap
-  { d: "M195 40 L205 40", delay: 1.5, tone: "primary" },
-];
-
-const MIN_VISIBLE_MS = 2200;
+// Matches the trimmed video's natural runtime (it settles by ~2.5s) plus a
+// short hold before fading into the site.
+const VIDEO_DURATION_MS = 2600;
+const MIN_VISIBLE_MS = VIDEO_DURATION_MS + 150;
 const HARD_TIMEOUT_MS = 4500;
 
 export function LoadingScreen() {
   const [visible, setVisible] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const start = Date.now();
     document.body.style.overflow = "hidden";
+
+    const video = videoRef.current;
+    if (video) {
+      // Try playing with sound first. Browsers never show a permission
+      // prompt for this — autoplay-with-sound is either silently allowed
+      // (rare, on returning visitors with high "media engagement") or
+      // silently rejected, in which case we fall back to muted playback,
+      // which is always allowed.
+      video.muted = false;
+      video.play().catch(() => {
+        video.muted = true;
+        video.play().catch(() => {});
+      });
+    }
 
     const reveal = () => {
       const elapsed = Date.now() - start;
@@ -66,45 +58,20 @@ export function LoadingScreen() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-navy"
+          className="fixed inset-0 z-[100] flex items-center justify-center"
+          style={{ backgroundColor: "#0f2537" }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
         >
-          <svg
-            viewBox="0 0 400 240"
-            className="h-[clamp(150px,20vw,240px)] w-auto"
-            fill="none"
+          <video
+            ref={videoRef}
+            className="h-[clamp(220px,26vw,380px)] w-[clamp(220px,26vw,380px)] object-contain"
+            playsInline
+            preload="auto"
           >
-            {MEMBERS.map((member, i) => (
-              <motion.path
-                key={i}
-                d={member.d}
-                stroke={member.tone === "primary" ? "#C2622E" : "#E0916A"}
-                strokeWidth={member.tone === "primary" ? 3 : 2}
-                strokeLinecap="round"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={{
-                  duration: member.tone === "primary" ? 0.5 : 0.28,
-                  delay: member.delay,
-                  ease: "easeInOut",
-                }}
-              />
-            ))}
-          </svg>
-          <motion.div
-            className="mt-8 flex flex-col items-center gap-2"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.7 }}
-          >
-            <span className="font-display text-2xl font-bold tracking-tight text-white">
-              ORION
-            </span>
-            <span className="font-mono text-[10px] tracking-[0.34em] text-apricot uppercase">
-              Developers
-            </span>
-          </motion.div>
+            <source src="/loading/orion-build.webm" type="video/webm" />
+            <source src="/loading/orion-build.mp4" type="video/mp4" />
+          </video>
         </motion.div>
       )}
     </AnimatePresence>

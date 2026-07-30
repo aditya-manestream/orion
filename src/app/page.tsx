@@ -4,6 +4,7 @@ import { PracticeSection } from "@/components/practice-section";
 import { AdvantageSection } from "@/components/advantage-section";
 import { CapabilitiesSection } from "@/components/capabilities-section";
 import { AnatomySection } from "@/components/anatomy-section";
+import { AnatomyScrolly } from "@/components/anatomy-scrolly";
 import { ProjectsSection } from "@/components/projects-section";
 import { ProcessSection } from "@/components/process-section";
 import { BuildSection } from "@/components/build-section";
@@ -18,7 +19,12 @@ export default function Home() {
       <PracticeSection />
       <AdvantageSection />
       <CapabilitiesSection />
-      <AnatomySection />
+      <div className="hidden lg:block">
+        <AnatomyScrolly />
+      </div>
+      <div className="lg:hidden">
+        <AnatomySection id="anatomy-mobile" />
+      </div>
       <ProjectsSection />
       <ProcessSection />
       <BuildSection />

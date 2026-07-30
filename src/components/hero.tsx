@@ -11,7 +11,7 @@ const STATS = [
   { label: "Fig. 01", value: "Completed shell, Nashik" },
 ];
 
-const HERO_BASE_DELAY = 2.3;
+const HERO_BASE_DELAY = 2.7;
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const fadeUp = {
