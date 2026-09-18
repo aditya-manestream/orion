@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { MobileNav } from "@/components/mobile-nav";
 
 const NAV_LINKS = [
   { href: "/about", label: "About" },
@@ -13,6 +14,9 @@ const NAV_LINKS = [
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -94,6 +98,21 @@ export function SiteHeader() {
             >
               Request a quote
             </Link>
+            <button
+              type="button"
+              onClick={() => setMenuOpen(true)}
+              aria-label="Open navigation"
+              aria-expanded={menuOpen}
+              className="-mr-2 flex h-11 w-11 items-center justify-center text-ink-300 transition-colors hover:text-white md:hidden"
+            >
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <path
+                  d="M3 6h16M3 11h16M3 16h16"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                />
+              </svg>
+            </button>
           </nav>
         </div>
         <div
@@ -101,6 +120,8 @@ export function SiteHeader() {
           style={{ width: `${progress}%` }}
         />
       </header>
+
+      <MobileNav links={NAV_LINKS} open={menuOpen} onClose={closeMenu} />
     </div>
   );
 }
