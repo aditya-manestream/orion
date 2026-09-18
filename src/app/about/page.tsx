@@ -1,13 +1,14 @@
 import Link from "next/link";
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 
-export const metadata: Metadata = {
-  title: "About Orion Developers — Engineering-Led PEB Practice",
+export const metadata = pageMetadata({
+  title: "About",
   description:
     "Orion Developers is an engineering-led pre-engineered building practice in Nashik, Maharashtra, holding design, fabrication and erection under one contract.",
-};
+  path: "/about",
+});
 
 const PRINCIPLES = [
   {

@@ -15,14 +15,23 @@ invented values must not ship in their place.
       lossy. Decide before launch between a Resend-backed API route, a
       hosted form endpoint (Web3Forms/Formspree), or a WhatsApp handoff.
 
-## Phase 2 — Findability (not started)
+## Phase 2 — Findability
 
-- [ ] `metadataBase` + per-route Open Graph / Twitter metadata (shared links
-      currently render bare in WhatsApp and LinkedIn)
-- [ ] Open Graph share image
-- [ ] `sitemap.ts` and `robots.ts`
-- [ ] `LocalBusiness` + `Organization` JSON-LD **[needs client input]**
-- [ ] Per-project `Project`/`CreativeWork` JSON-LD
+- [x] `metadataBase` + per-route Open Graph / Twitter metadata, with a title
+      template
+- [x] Generated brand share card at the app root, plus a generated
+      per-project card compositing the project photo
+- [x] `sitemap.ts` and `robots.ts`
+- [x] `Organization` + `LocalBusiness` JSON-LD (partial — see below)
+- [x] Per-project `CreativeWork` and `BreadcrumbList` JSON-LD
+- [ ] **Set `NEXT_PUBLIC_SITE_URL` to the real domain in the hosting
+      environment.** Until then everything absolute — canonicals, share
+      image URLs, the sitemap — points at the `https://oriondevelopers.in`
+      fallback in `src/lib/site.ts`. **[needs client input]**
+- [ ] Submit the sitemap in Google Search Console once the domain is live
+- [ ] Add `geo` coordinates, `foundingDate` and tax identifiers to the
+      `LocalBusiness` block **[needs client input]** — deliberately omitted
+      rather than guessed
 
 ## Phase 3 — Depth & polish (not started)
 
@@ -50,6 +59,7 @@ invented values must not ship in their place.
 | Google Maps coordinates for the Nashik office | `LocalBusiness` structured data, local search ranking | **[needs client input]** |
 | Higher-resolution originals of the site photography | `public/photos/` currently reuses a limited set across sections | **[needs client input]** |
 | Preferred enquiry destination (inbox vs WhatsApp) | Contact form backend | **[needs client input]** |
+| Production domain | `NEXT_PUBLIC_SITE_URL`, canonicals, sitemap, share-image URLs | **[needs client input]** — falling back to `https://oriondevelopers.in` |
 
 ## Content accuracy note
 

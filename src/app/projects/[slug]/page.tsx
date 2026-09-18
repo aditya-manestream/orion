@@ -5,6 +5,8 @@ import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
 import { PROJECTS, getProjectBySlug } from "@/lib/projects";
+import { pageMetadata } from "@/lib/metadata";
+import { BreadcrumbSchema, ProjectSchema } from "@/components/structured-data";
 
 export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
@@ -18,10 +20,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return {};
-  return {
-    title: `${project.name} — Orion Developers Projects`,
+  return pageMetadata({
+    title: `${project.name} — ${project.category}`,
     description: project.summary,
-  };
+    path: `/projects/${project.slug}`,
+  });
 }
 
 export default async function ProjectDetailPage({
@@ -37,6 +40,14 @@ export default async function ProjectDetailPage({
 
   return (
     <>
+      <ProjectSchema project={project} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/projects" },
+          { name: project.name, path: `/projects/${project.slug}` },
+        ]}
+      />
       <section className="relative overflow-hidden bg-navy-deep pt-[clamp(140px,15vw,180px)] pb-[clamp(56px,7vw,88px)]">
         <PhotoPlaceholder
           src={project.photo}

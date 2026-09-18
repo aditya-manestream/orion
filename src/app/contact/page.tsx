@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/page-hero";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { Reveal } from "@/components/reveal";
 
-export const metadata: Metadata = {
-  title: "Contact — Orion Developers",
+export const metadata = pageMetadata({
+  title: "Contact",
   description:
     "Send Orion Developers your site, span and use case for a preliminary pre-engineered building design and schedule.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

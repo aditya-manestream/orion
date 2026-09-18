@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/page-hero";
 import { ProjectsGallery } from "@/components/projects-gallery";
 import { PROJECTS } from "@/lib/projects";
 
-export const metadata: Metadata = {
-  title: "Projects — Orion Developers",
+export const metadata = pageMetadata({
+  title: "Projects",
   description:
     "Recent pre-engineered building projects from Orion Developers across Maharashtra — agro processing, textile manufacturing, warehousing and institutional structures.",
-};
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   return (

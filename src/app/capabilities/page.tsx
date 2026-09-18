@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/page-hero";
 import { CapabilitiesSection } from "@/components/capabilities-section";
 import { AdvantageSection } from "@/components/advantage-section";
 import { AnatomySection } from "@/components/anatomy-section";
 import { BuildSection } from "@/components/build-section";
 
-export const metadata: Metadata = {
-  title: "Capabilities & Systems — Orion Developers",
+export const metadata = pageMetadata({
+  title: "Capabilities & Systems",
   description:
     "Orion Developers' PEB systems showcase: design, supply and erection capabilities, structural anatomy, configurations and sectors served.",
-};
+  path: "/capabilities",
+});
 
 export default function CapabilitiesPage() {
   return (
