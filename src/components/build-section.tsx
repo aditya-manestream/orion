@@ -52,7 +52,7 @@ export function BuildSection({
   return (
     <section id="build" className="bg-navy">
       <div className="mx-auto max-w-[1400px] px-6 py-[clamp(74px,9vw,140px)] sm:px-8 lg:px-16">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(340px,1fr))] items-start gap-[clamp(36px,4.4vw,72px)]">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(340px,100%),1fr))] items-start gap-[clamp(36px,4.4vw,72px)]">
           <Reveal>
             <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
               {kicker}

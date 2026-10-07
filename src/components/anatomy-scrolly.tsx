@@ -126,9 +126,6 @@ export function AnatomyScrolly() {
                   </p>
                 </motion.div>
               </AnimatePresence>
-              <span className="mt-8 hidden font-mono text-[11px] tracking-[0.16em] text-ink-800 uppercase lg:block">
-                Keep scrolling
-              </span>
             </div>
 
             <div className="relative aspect-[4/3] overflow-hidden bg-[#eef1f4]">

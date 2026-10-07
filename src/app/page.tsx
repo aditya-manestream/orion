@@ -19,10 +19,11 @@ export default function Home() {
       <PracticeSection />
       <AdvantageSection />
       <CapabilitiesSection />
-      <div className="hidden lg:block">
+      {/* Reduced motion gets the static anatomy at every width. */}
+      <div className="hidden lg:block motion-reduce:lg:hidden">
         <AnatomyScrolly />
       </div>
-      <div className="lg:hidden">
+      <div className="lg:hidden motion-reduce:lg:block">
         <AnatomySection id="anatomy-mobile" />
       </div>
       <ProjectsSection />

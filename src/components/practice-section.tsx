@@ -11,7 +11,7 @@ const POINTS = [
 export function PracticeSection() {
   return (
     <section id="practice" className="relative bg-navy">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(340px,1fr))] items-center gap-[clamp(40px,5vw,80px)] px-6 py-[clamp(74px,9vw,140px)] sm:px-8 lg:px-16">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(min(340px,100%),1fr))] items-center gap-[clamp(40px,5vw,80px)] px-6 py-[clamp(74px,9vw,140px)] sm:px-8 lg:px-16">
         <Reveal>
           <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
             01 / The practice
@@ -48,7 +48,7 @@ export function PracticeSection() {
           </div>
           <Link
             href="/about"
-            className="mt-7 inline-block font-mono text-xs tracking-[0.16em] text-apricot uppercase hover:text-white"
+            className="mt-4 inline-flex min-h-11 items-center font-mono text-xs tracking-[0.16em] text-apricot uppercase hover:text-white"
           >
             More about Orion →
           </Link>

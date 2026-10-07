@@ -25,7 +25,7 @@ export function ProjectsSection() {
           </p>
         </Reveal>
 
-        <div className="mt-[clamp(36px,4vw,56px)] grid grid-cols-[repeat(auto-fit,minmax(420px,1fr))] gap-[clamp(20px,2.2vw,30px)]">
+        <div className="mt-[clamp(36px,4vw,56px)] grid grid-cols-[repeat(auto-fit,minmax(min(420px,100%),1fr))] gap-[clamp(20px,2.2vw,30px)]">
           {FEATURED_PROJECTS.map((project, i) => (
             <Reveal key={project.slug} delay={i * 0.08}>
               <ProjectCard project={project} large />
@@ -44,7 +44,7 @@ export function ProjectsSection() {
         <Reveal delay={0.1} className="mt-[clamp(36px,4vw,56px)] flex justify-center">
           <Link
             href="/projects"
-            className="border border-white/[0.34] px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-colors hover:border-apricot hover:bg-apricot/10"
+            className="border border-white/[0.34] px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-[background-color,border-color,transform] active:scale-[0.97] hover:border-apricot hover:bg-apricot/10"
           >
             View all projects
           </Link>

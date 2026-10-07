@@ -33,7 +33,7 @@ export function SiteHeader() {
     <div className="fixed inset-x-0 top-0 z-50">
       <div className="border-b border-white/[0.07] bg-navy-deep">
         <div className="mx-auto flex h-[38px] max-w-[1400px] items-center justify-between gap-5 px-5 sm:px-8 lg:px-14">
-          <span className="truncate font-mono text-[11px] tracking-[0.2em] text-uppercase text-ink-800 uppercase">
+          <span className="min-w-0 truncate font-mono text-[11px] tracking-[0.2em] text-uppercase text-ink-800 uppercase">
             Nashik, Maharashtra &middot; Turnkey PEB design, supply &amp;
             erection
           </span>
@@ -83,14 +83,14 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="hidden font-mono text-xs tracking-[0.14em] text-ink-400 uppercase hover:text-white md:inline"
+                className="hidden min-h-11 items-center font-mono text-xs tracking-[0.14em] text-ink-400 uppercase hover:text-white md:inline-flex"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="bg-rust px-[22px] py-[13px] font-mono text-xs tracking-[0.16em] text-white uppercase transition-colors hover:bg-rust-dark"
+              className="inline-flex min-h-11 items-center bg-rust px-[22px] font-mono text-xs tracking-[0.16em] text-white uppercase transition-[background-color,transform] hover:bg-rust-dark active:scale-[0.97]"
             >
               Request a quote
             </Link>

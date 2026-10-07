@@ -35,23 +35,23 @@ export function SiteFooter() {
           <span className="font-mono text-[11px] tracking-[0.24em] text-apricot uppercase">
             Explore
           </span>
-          <div className="mt-5 flex flex-col gap-3">
-            <Link href="/about" className="text-[15px] text-ink-400">
+          <div className="mt-3 flex flex-col items-start">
+            <Link href="/about" className="inline-flex min-h-11 items-center text-[15px] text-ink-400">
               About Orion
             </Link>
-            <Link href="/capabilities" className="text-[15px] text-ink-400">
+            <Link href="/capabilities" className="inline-flex min-h-11 items-center text-[15px] text-ink-400">
               Capabilities
             </Link>
             <Link
               href="/capabilities#anatomy"
-              className="text-[15px] text-ink-400"
+              className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
             >
               PEB anatomy
             </Link>
-            <Link href="/projects" className="text-[15px] text-ink-400">
+            <Link href="/projects" className="inline-flex min-h-11 items-center text-[15px] text-ink-400">
               Projects
             </Link>
-            <Link href="/#process" className="text-[15px] text-ink-400">
+            <Link href="/#process" className="inline-flex min-h-11 items-center text-[15px] text-ink-400">
               Process
             </Link>
           </div>
@@ -60,34 +60,34 @@ export function SiteFooter() {
           <span className="font-mono text-[11px] tracking-[0.24em] text-apricot uppercase">
             We build
           </span>
-          <div className="mt-5 flex flex-col gap-3">
+          <div className="mt-3 flex flex-col items-start">
             <Link
               href="/capabilities#build"
-              className="text-[15px] text-ink-400"
+              className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
             >
               Pre-engineered buildings
             </Link>
             <Link
               href="/capabilities#build"
-              className="text-[15px] text-ink-400"
+              className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
             >
               Industrial warehouses
             </Link>
             <Link
               href="/capabilities#build"
-              className="text-[15px] text-ink-400"
+              className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
             >
               Manufacturing facilities
             </Link>
             <Link
               href="/capabilities#build"
-              className="text-[15px] text-ink-400"
+              className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
             >
               Commercial steel hubs
             </Link>
             <Link
               href="/capabilities#build"
-              className="text-[15px] text-ink-400"
+              className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
             >
               Roofing &amp; cladding
             </Link>
@@ -97,26 +97,26 @@ export function SiteFooter() {
           <span className="font-mono text-[11px] tracking-[0.24em] text-apricot uppercase">
             Contact
           </span>
-          <div className="mt-5 flex flex-col gap-3.5">
-            <span className="text-[15px] leading-[1.55] text-ink-400">
+          <div className="mt-3 flex flex-col items-start">
+            <span className="pb-2 text-[15px] leading-[1.55] text-ink-400">
               1st Floor, Rushiraj Annex,
               <br />
               D&apos;Souza Colony, College Road,
               <br />
               Nashik — 422005
             </span>
-            <a href="tel:+917020475455" className="text-[15px] text-ink-400">
+            <a href="tel:+917020475455" className="inline-flex min-h-11 items-center text-[15px] text-ink-400">
               +91 70204 75455
             </a>
             <a
               href="mailto:orionpeb@gmail.com"
-              className="text-[15px] text-ink-400"
+              className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
             >
               orionpeb@gmail.com
             </a>
             <Link
               href="/contact"
-              className="text-[15px] text-apricot hover:text-white"
+              className="inline-flex min-h-11 items-center text-[15px] text-apricot hover:text-white"
             >
               Send a project enquiry →
             </Link>

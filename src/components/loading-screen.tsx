@@ -14,6 +14,13 @@ export function LoadingScreen() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    // Reduced motion: the overlay is hidden by CSS, so skip playback and
+    // the scroll lock entirely.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const unmount = window.setTimeout(() => setVisible(false), 0);
+      return () => window.clearTimeout(unmount);
+    }
+
     const start = Date.now();
     document.body.style.overflow = "hidden";
 
@@ -58,7 +65,7 @@ export function LoadingScreen() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center"
+          className="fixed inset-0 z-[100] flex items-center justify-center motion-reduce:hidden"
           style={{ backgroundColor: "#0f2537" }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}

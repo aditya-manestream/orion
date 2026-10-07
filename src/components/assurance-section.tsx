@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Reveal } from "./reveal";
 
 const ASSURANCES = [
@@ -43,15 +42,6 @@ export function AssuranceSection() {
             <span className="mt-[18px] block font-mono text-[11px] tracking-[0.22em] text-apricot-pale uppercase">
               Orion Developers — operational commitment
             </span>
-            <div className="mt-10 flex flex-1 items-end justify-center opacity-[0.16] sm:justify-start">
-              <Image
-                src="/orion-logo.png"
-                alt=""
-                width={230}
-                height={324}
-                className="h-[clamp(120px,16vw,230px)] w-auto"
-              />
-            </div>
           </Reveal>
           <div className="flex flex-col">
             {ASSURANCES.map((item, i) => (

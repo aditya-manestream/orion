@@ -12,6 +12,8 @@ type PhotoPlaceholderProps = {
   overlay?: boolean;
   background?: string;
   className?: string;
+  preload?: boolean;
+  sizes?: string;
 };
 
 /**
@@ -35,6 +37,8 @@ export function PhotoPlaceholder({
   overlay = true,
   background,
   className = "",
+  preload = false,
+  sizes = "(min-width: 1024px) 50vw, 100vw",
 }: PhotoPlaceholderProps) {
   return (
     <div className={className}>
@@ -56,7 +60,8 @@ export function PhotoPlaceholder({
             src={src}
             alt={alt}
             fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
+            sizes={sizes}
+            preload={preload}
             className={fit === "contain" ? "object-contain" : "object-cover"}
           />
         ) : (

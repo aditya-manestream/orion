@@ -44,4 +44,24 @@
     background: var(--color-rust);
     color: #fff;
   }
+
+  :focus-visible {
+    outline: 2px solid var(--color-apricot);
+    outline-offset: 3px;
+  }
+
+  /* Anchor targets clear the fixed header when Lenis is off (reduced motion). */
+  section[id] {
+    scroll-margin-top: 130px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }

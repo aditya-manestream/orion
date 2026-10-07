@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { PhotoPlaceholder } from "./photo-placeholder";
 
@@ -14,16 +14,22 @@ const STATS = [
 const HERO_BASE_DELAY = 2.7;
 const EASE = [0.16, 1, 0.3, 1] as const;
 
+// A negative delay means reduced motion: show the final state immediately
+// (no loading screen to wait for, no fade).
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, delay, ease: EASE },
+    transition:
+      delay < 0 ? { duration: 0 } : { duration: 0.8, delay, ease: EASE },
   }),
 };
 
 export function Hero() {
+  const reduce = useReducedMotion();
+  const at = (offset: number) => (reduce ? -1 : HERO_BASE_DELAY + offset);
+
   return (
     <section
       id="top"
@@ -34,6 +40,8 @@ export function Hero() {
         alt="Completed Orion pre-engineered building at dusk"
         className="absolute inset-0"
         corners={false}
+        preload
+        sizes="100vw"
         figLabel="Fig. 01 — Completed shell, Nashik"
       />
       <div
@@ -49,7 +57,7 @@ export function Hero() {
           className="flex items-center gap-4"
           initial="hidden"
           animate="visible"
-          custom={HERO_BASE_DELAY}
+          custom={at(0)}
           variants={fadeUp}
         >
           <span className="h-0.5 w-[clamp(28px,4vw,58px)] flex-none bg-rust" />
@@ -61,7 +69,7 @@ export function Hero() {
           className="mt-[clamp(18px,2vw,28px)] max-w-[15ch] text-balance font-display text-[clamp(46px,7.6vw,124px)] leading-[0.9] font-bold tracking-[-0.035em] text-white"
           initial="hidden"
           animate="visible"
-          custom={HERO_BASE_DELAY + 0.12}
+          custom={at(0.12)}
           variants={fadeUp}
         >
           Built to rise. Engineered to last.
@@ -70,7 +78,7 @@ export function Hero() {
           className="mt-[clamp(20px,2vw,30px)] max-w-[60ch] text-pretty text-[clamp(17px,1.55vw,23px)] leading-[1.58] text-ink-600"
           initial="hidden"
           animate="visible"
-          custom={HERO_BASE_DELAY + 0.26}
+          custom={at(0.26)}
           variants={fadeUp}
         >
           Orion Developers designs, fabricates and erects steel structures —
@@ -81,18 +89,18 @@ export function Hero() {
           className="mt-[clamp(28px,3.2vw,46px)] flex flex-wrap gap-4"
           initial="hidden"
           animate="visible"
-          custom={HERO_BASE_DELAY + 0.4}
+          custom={at(0.4)}
           variants={fadeUp}
         >
           <Link
             href="/contact"
-            className="bg-rust px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-colors hover:bg-rust-dark"
+            className="bg-rust px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-[background-color,border-color,transform] active:scale-[0.97] hover:bg-rust-dark"
           >
             Request a quote
           </Link>
           <a
             href="#projects"
-            className="border border-white/[0.34] px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-colors hover:border-apricot hover:bg-apricot/10"
+            className="border border-white/[0.34] px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-[background-color,border-color,transform] active:scale-[0.97] hover:border-apricot hover:bg-apricot/10"
           >
             See our projects
           </a>
@@ -103,7 +111,7 @@ export function Hero() {
         className="relative border-t border-white/[0.14] bg-navy-deep/42"
         initial="hidden"
         animate="visible"
-        custom={HERO_BASE_DELAY + 0.55}
+        custom={at(0.55)}
         variants={fadeUp}
       >
         <div className="mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(190px,1fr))] px-6 sm:px-8 lg:px-16">

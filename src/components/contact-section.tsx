@@ -4,14 +4,7 @@ import { Reveal } from "./reveal";
 export function ContactSection() {
   return (
     <section id="contact" className="relative overflow-hidden bg-navy">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-40"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(0deg, rgba(224,145,106,0.07) 0 1px, transparent 1px 48px), repeating-linear-gradient(90deg, rgba(224,145,106,0.07) 0 1px, transparent 1px 48px)",
-        }}
-      />
-      <div className="relative mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(340px,1fr))] items-center gap-[clamp(40px,5vw,80px)] px-6 py-[clamp(80px,10vw,150px)] sm:px-8 lg:px-16">
+      <div className="relative mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(min(340px,100%),1fr))] items-center gap-[clamp(40px,5vw,80px)] px-6 py-[clamp(80px,10vw,150px)] sm:px-8 lg:px-16">
         <Reveal>
           <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
             09 / Get started
@@ -26,13 +19,13 @@ export function ContactSection() {
           <div className="mt-[clamp(28px,3.2vw,44px)] flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="bg-rust px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-colors hover:bg-rust-dark"
+              className="bg-rust px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-[background-color,border-color,transform] active:scale-[0.97] hover:bg-rust-dark"
             >
               Start a project
             </Link>
             <a
               href="tel:+917020475455"
-              className="border border-white/[0.34] px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-colors hover:border-apricot hover:bg-apricot/10"
+              className="border border-white/[0.34] px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-[background-color,border-color,transform] active:scale-[0.97] hover:border-apricot hover:bg-apricot/10"
             >
               Call the office
             </a>
@@ -58,16 +51,16 @@ export function ContactSection() {
               <div className="font-mono text-[11px] tracking-[0.2em] text-ink-800 uppercase">
                 Mobile
               </div>
-              <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
+              <div className="mt-1 flex flex-wrap gap-x-5">
                 <a
                   href="tel:+917020475455"
-                  className="text-[clamp(15px,1.2vw,18px)] text-white"
+                  className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
                 >
                   +91 70204 75455
                 </a>
                 <a
                   href="tel:+918530122776"
-                  className="text-[clamp(15px,1.2vw,18px)] text-white"
+                  className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
                 >
                   +91 85301 22776
                 </a>
@@ -79,7 +72,7 @@ export function ContactSection() {
               </div>
               <a
                 href="tel:02536911208"
-                className="mt-2 block text-[clamp(15px,1.2vw,18px)] text-white"
+                className="mt-1 flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
               >
                 0253 691 1208
               </a>
@@ -88,16 +81,16 @@ export function ContactSection() {
               <div className="font-mono text-[11px] tracking-[0.2em] text-ink-800 uppercase">
                 Email
               </div>
-              <div className="mt-2 flex flex-col gap-1.5">
+              <div className="mt-1 flex flex-col items-start">
                 <a
                   href="mailto:orionpeb@gmail.com"
-                  className="text-[clamp(15px,1.2vw,18px)] text-white"
+                  className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
                 >
                   orionpeb@gmail.com
                 </a>
                 <a
                   href="mailto:mayur.orion@gmail.com"
-                  className="text-[clamp(15px,1.2vw,18px)] text-white"
+                  className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
                 >
                   mayur.orion@gmail.com
                 </a>
