@@ -87,7 +87,7 @@ export function BuildSection({
                       onClick={() => setOpenIndex(isOpen ? -1 : i)}
                       className="flex w-full items-center gap-[clamp(14px,1.6vw,22px)] py-[clamp(22px,2.2vw,30px)] text-left font-display text-[clamp(19px,1.8vw,27px)] font-semibold tracking-[-0.018em] text-white"
                     >
-                      <span className="flex-none font-mono text-xs tracking-[0.18em] text-rust">
+                      <span className="flex-none font-mono text-xs tracking-[0.18em] text-apricot">
                         {config.code}
                       </span>
                       <span className="flex-1">{config.title}</span>
@@ -121,7 +121,7 @@ export function BuildSection({
             </div>
 
             <div className="mt-[clamp(34px,3.6vw,52px)]">
-              <span className="font-mono text-[11px] tracking-[0.24em] text-ink-800 uppercase">
+              <span className="font-mono text-[11px] tracking-[0.24em] text-ink-700 uppercase">
                 Sectors served
               </span>
               <div className="mt-4 grid grid-cols-1 gap-px bg-white/[0.11] sm:grid-cols-2 lg:grid-cols-3">

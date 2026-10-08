@@ -40,7 +40,7 @@ async function openPage() {
   let id = 0; const pending = new Map(); const listeners = [];
   ws.addEventListener("message", (e) => {
     const m = JSON.parse(e.data);
-    if (m.id && pending.has(m.id)) { const p = pending.get(m.id); pending.delete(m.id); m.error ? p.rej(new Error(m.error.message)) : p.res(m.result); }
+    if (m.id && pending.has(m.id)) { const p = pending.get(m.id); pending.delete(m.id); if (m.error) p.rej(new Error(m.error.message)); else p.res(m.result); }
     else listeners.forEach((l) => l(m));
   });
   const send = (method, params = {}) => new Promise((res, rej) => { const i = ++id; pending.set(i, { res, rej }); ws.send(JSON.stringify({ id: i, method, params })); });

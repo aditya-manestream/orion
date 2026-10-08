@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { whatsappUrl } from "@/lib/contact";
 
 export function SiteFooter() {
   return (
@@ -109,6 +110,14 @@ export function SiteFooter() {
               +91 70204 75455
             </a>
             <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
+            >
+              WhatsApp
+            </a>
+            <a
               href="mailto:orionpeb@gmail.com"
               className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
             >
@@ -124,10 +133,10 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-3.5 border-t border-white/[0.09] px-6 py-[22px] sm:px-8 lg:px-16">
-        <span className="font-mono text-[11px] tracking-[0.14em] text-ink-900">
+        <span className="font-mono text-[11px] tracking-[0.14em] text-ink-800">
           &copy; 2026 Orion Developers. All rights reserved.
         </span>
-        <span className="font-mono text-[11px] tracking-[0.14em] text-ink-900">
+        <span className="font-mono text-[11px] tracking-[0.14em] text-ink-800">
           Nashik · Maharashtra · India
         </span>
       </div>

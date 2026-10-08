@@ -6,7 +6,8 @@ import { AnatomySection } from "@/components/anatomy-section";
 import { BuildSection } from "@/components/build-section";
 
 export const metadata: Metadata = {
-  title: "Capabilities & Systems — Orion Developers",
+  title: "PEB Design, Supply and Erection Capabilities",
+  alternates: { canonical: "/capabilities" },
   description:
     "Orion Developers' PEB systems showcase: design, supply and erection capabilities, structural anatomy, configurations and sectors served.",
 };

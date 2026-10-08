@@ -19,8 +19,10 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
   if (!project) return {};
   return {
-    title: `${project.name} — Orion Developers Projects`,
+    title: `${project.name}: ${project.category}`,
     description: project.summary,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: { images: [{ url: project.photo, alt: `${project.name}, ${project.category}` }] },
   };
 }
 

@@ -4,7 +4,8 @@ import { EnquiryForm } from "@/components/enquiry-form";
 import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
-  title: "Contact — Orion Developers",
+  title: "Request a PEB Quote",
+  alternates: { canonical: "/contact" },
   description:
     "Send Orion Developers your site, span and use case for a preliminary pre-engineered building design and schedule.",
 };

@@ -4,7 +4,7 @@ import { PracticeSection } from "@/components/practice-section";
 import { AdvantageSection } from "@/components/advantage-section";
 import { CapabilitiesSection } from "@/components/capabilities-section";
 import { AnatomySection } from "@/components/anatomy-section";
-import { AnatomyScrolly } from "@/components/anatomy-scrolly";
+import { AnatomyModel } from "@/components/anatomy/anatomy-model";
 import { ProjectsSection } from "@/components/projects-section";
 import { ProcessSection } from "@/components/process-section";
 import { BuildSection } from "@/components/build-section";
@@ -19,12 +19,12 @@ export default function Home() {
       <PracticeSection />
       <AdvantageSection />
       <CapabilitiesSection />
-      {/* Reduced motion gets the static anatomy at every width. */}
-      <div className="hidden lg:block motion-reduce:lg:hidden">
-        <AnatomyScrolly />
+      {/* Reduced motion gets the static labelled diagram instead of the 3D build. */}
+      <div className="motion-reduce:hidden">
+        <AnatomyModel />
       </div>
-      <div className="lg:hidden motion-reduce:lg:block">
-        <AnatomySection id="anatomy-mobile" />
+      <div className="hidden motion-reduce:block">
+        <AnatomySection id="anatomy-static" />
       </div>
       <ProjectsSection />
       <ProcessSection />

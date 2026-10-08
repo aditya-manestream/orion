@@ -37,7 +37,7 @@ export function PracticeSection() {
                 key={point}
                 className="grid grid-cols-[78px_1fr] gap-5 border-t border-white/[0.13] py-[18px]"
               >
-                <span className="font-mono text-xs tracking-[0.16em] text-rust">
+                <span className="font-mono text-xs tracking-[0.16em] text-apricot">
                   0{i + 1}
                 </span>
                 <span className="text-[clamp(15px,1.2vw,17px)] text-ink-300">

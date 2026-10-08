@@ -40,6 +40,13 @@ export function AdvantageSection({
 }) {
   return (
     <section id="advantage" className="relative bg-navy-mid">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-40"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(224,145,106,0.05) 0 1px, transparent 1px 56px), repeating-linear-gradient(90deg, rgba(224,145,106,0.05) 0 1px, transparent 1px 56px)",
+        }}
+      />
       <div className="relative mx-auto max-w-[1400px] px-6 py-[clamp(74px,9vw,140px)] sm:px-8 lg:px-16">
         <Reveal className="flex flex-wrap items-end justify-between gap-7 border-b border-white/[0.14] pb-[clamp(24px,2.6vw,34px)]">
           <div>

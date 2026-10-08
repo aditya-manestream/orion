@@ -45,6 +45,13 @@
     color: #fff;
   }
 
+  /* Brand "structure on grid" overlay for photography and the model stage. */
+  .blueprint-grid {
+    background-image:
+      repeating-linear-gradient(0deg, rgba(224, 145, 106, 0.12) 0 1px, transparent 1px 48px),
+      repeating-linear-gradient(90deg, rgba(224, 145, 106, 0.12) 0 1px, transparent 1px 48px);
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-apricot);
     outline-offset: 3px;

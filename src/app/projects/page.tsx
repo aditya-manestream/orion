@@ -4,7 +4,8 @@ import { ProjectsGallery } from "@/components/projects-gallery";
 import { PROJECTS } from "@/lib/projects";
 
 export const metadata: Metadata = {
-  title: "Projects — Orion Developers",
+  title: "PEB Projects in Maharashtra",
+  alternates: { canonical: "/projects" },
   description:
     "Recent pre-engineered building projects from Orion Developers across Maharashtra — agro processing, textile manufacturing, warehousing and institutional structures.",
 };

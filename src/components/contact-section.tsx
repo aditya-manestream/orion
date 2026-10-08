@@ -1,9 +1,18 @@
 import Link from "next/link";
+import { whatsappUrl } from "@/lib/contact";
+import { WhatsAppIcon } from "./icons";
 import { Reveal } from "./reveal";
 
 export function ContactSection() {
   return (
     <section id="contact" className="relative overflow-hidden bg-navy">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-40"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, rgba(224,145,106,0.07) 0 1px, transparent 1px 48px), repeating-linear-gradient(90deg, rgba(224,145,106,0.07) 0 1px, transparent 1px 48px)",
+        }}
+      />
       <div className="relative mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(min(340px,100%),1fr))] items-center gap-[clamp(40px,5vw,80px)] px-6 py-[clamp(80px,10vw,150px)] sm:px-8 lg:px-16">
         <Reveal>
           <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
@@ -28,6 +37,15 @@ export function ContactSection() {
               className="border border-white/[0.34] px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-[background-color,border-color,transform] active:scale-[0.97] hover:border-apricot hover:bg-apricot/10"
             >
               Call the office
+            </a>
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 border border-white/[0.34] px-[30px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-[background-color,border-color,transform] hover:border-apricot hover:bg-apricot/10 active:scale-[0.97]"
+            >
+              <WhatsAppIcon className="h-[18px] w-[18px] text-[#25d366]" />
+              WhatsApp us
             </a>
           </div>
         </Reveal>
