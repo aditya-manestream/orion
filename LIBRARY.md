@@ -5,10 +5,11 @@ what they can get at each budget, and to repurpose into new builds quickly.
 
 - Library ID: RE-08
 - Track: Real Estate
-- Library branch: `main`
+- Library branch: `library`
 - Vercel project: `ms-re-08-orion`
 - Tracker: Notion > Manestream Portfolio > Portfolio Library
 
+> **Client site (not yet live).** All library work happens on the `library` branch. Never merge it into `main`: `main` is the client build.
 
 
 ## Done when (every library site)
