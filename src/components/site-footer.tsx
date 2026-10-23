@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { whatsappUrl } from "@/lib/contact";
+import { PHONE_PRIMARY, whatsappUrl } from "@/lib/contact";
 
 export function SiteFooter() {
   return (
@@ -106,8 +106,8 @@ export function SiteFooter() {
               <br />
               Nashik — 422005
             </span>
-            <a href="tel:+917020475455" className="inline-flex min-h-11 items-center text-[15px] text-ink-400">
-              +91 70204 75455
+            <a href={`tel:${PHONE_PRIMARY.tel}`} className="inline-flex min-h-11 items-center text-[15px] text-ink-400">
+              {PHONE_PRIMARY.display}
             </a>
             <a
               href={whatsappUrl()}
@@ -116,12 +116,6 @@ export function SiteFooter() {
               className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
             >
               WhatsApp
-            </a>
-            <a
-              href="mailto:orionpeb@gmail.com"
-              className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
-            >
-              orionpeb@gmail.com
             </a>
             <Link
               href="/contact"
@@ -136,8 +130,10 @@ export function SiteFooter() {
         <span className="font-mono text-[11px] tracking-[0.14em] text-ink-800">
           &copy; 2026 Orion Developers. All rights reserved.
         </span>
-        <span className="font-mono text-[11px] tracking-[0.14em] text-ink-800">
-          Nashik · Maharashtra · India
+        <span className="flex gap-6 font-mono text-[11px] tracking-[0.14em] text-ink-800">
+          <Link href="/privacy" className="inline-flex min-h-11 items-center hover:text-apricot">Privacy</Link>
+          <Link href="/terms" className="inline-flex min-h-11 items-center hover:text-apricot">Terms</Link>
+          <span className="inline-flex min-h-11 items-center">Nashik · Maharashtra · India</span>
         </span>
       </div>
       <div className="h-2.5 bg-rust" />

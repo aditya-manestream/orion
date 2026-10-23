@@ -1,9 +1,6 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/site";
 
+// Library copy: a client site, so the library build is never indexed (and has no sitemap).
 export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: { userAgent: "*", allow: "/" },
-    sitemap: `${SITE_URL}/sitemap.xml`,
-  };
+  return { rules: { userAgent: "*", disallow: "/" } };
 }

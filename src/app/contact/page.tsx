@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { Reveal } from "@/components/reveal";
+import { PHONE_PRIMARY } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Request a PEB Quote",
@@ -55,46 +56,10 @@ export default function ContactPage() {
                   </div>
                   <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
                     <a
-                      href="tel:+917020475455"
+                      href={`tel:${PHONE_PRIMARY.tel}`}
                       className="text-[clamp(15px,1.2vw,18px)] text-white"
                     >
-                      +91 70204 75455
-                    </a>
-                    <a
-                      href="tel:+918530122776"
-                      className="text-[clamp(15px,1.2vw,18px)] text-white"
-                    >
-                      +91 85301 22776
-                    </a>
-                  </div>
-                </div>
-                <div className="border-t border-white/[0.12] pt-[22px]">
-                  <div className="font-mono text-[11px] tracking-[0.2em] text-ink-800 uppercase">
-                    Landline
-                  </div>
-                  <a
-                    href="tel:02536911208"
-                    className="mt-2 block text-[clamp(15px,1.2vw,18px)] text-white"
-                  >
-                    0253 691 1208
-                  </a>
-                </div>
-                <div className="border-t border-white/[0.12] pt-[22px]">
-                  <div className="font-mono text-[11px] tracking-[0.2em] text-ink-800 uppercase">
-                    Email
-                  </div>
-                  <div className="mt-2 flex flex-col gap-1.5">
-                    <a
-                      href="mailto:orionpeb@gmail.com"
-                      className="text-[clamp(15px,1.2vw,18px)] text-white"
-                    >
-                      orionpeb@gmail.com
-                    </a>
-                    <a
-                      href="mailto:mayur.orion@gmail.com"
-                      className="text-[clamp(15px,1.2vw,18px)] text-white"
-                    >
-                      mayur.orion@gmail.com
+                      {PHONE_PRIMARY.display}
                     </a>
                   </div>
                 </div>

@@ -51,6 +51,8 @@ export const metadata: Metadata = {
     ],
   },
   twitter: { card: "summary_large_image" },
+  // Library copy of a client site: never indexed.
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
 };
 
 // Structured data: Orion as a local general contractor with real contacts.
@@ -62,8 +64,7 @@ const ORGANIZATION_LD = {
   url: SITE_URL,
   logo: `${SITE_URL}/orion-logo.png`,
   image: `${SITE_URL}/photos/site-sunset-completed.jpg`,
-  telephone: "+91-70204-75455",
-  email: "orionpeb@gmail.com",
+  telephone: "+91-98230-12345",
   address: {
     "@type": "PostalAddress",
     streetAddress: "1st Floor, Rushiraj Annex, D'Souza Colony, College Road",

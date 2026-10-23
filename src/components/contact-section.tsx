@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { whatsappUrl } from "@/lib/contact";
+import { PHONE_PRIMARY, whatsappUrl } from "@/lib/contact";
 import { WhatsAppIcon } from "./icons";
 import { Reveal } from "./reveal";
 
@@ -33,7 +33,7 @@ export function ContactSection() {
               Start a project
             </Link>
             <a
-              href="tel:+917020475455"
+              href={`tel:${PHONE_PRIMARY.tel}`}
               className="border border-white/[0.34] px-[34px] py-[19px] font-mono text-[13px] tracking-[0.16em] text-white uppercase transition-[background-color,border-color,transform] active:scale-[0.97] hover:border-apricot hover:bg-apricot/10"
             >
               Call the office
@@ -71,46 +71,10 @@ export function ContactSection() {
               </div>
               <div className="mt-1 flex flex-wrap gap-x-5">
                 <a
-                  href="tel:+917020475455"
+                  href={`tel:${PHONE_PRIMARY.tel}`}
                   className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
                 >
-                  +91 70204 75455
-                </a>
-                <a
-                  href="tel:+918530122776"
-                  className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
-                >
-                  +91 85301 22776
-                </a>
-              </div>
-            </div>
-            <div className="border-t border-white/[0.12] pt-[22px]">
-              <div className="font-mono text-[11px] tracking-[0.2em] text-ink-800 uppercase">
-                Landline
-              </div>
-              <a
-                href="tel:02536911208"
-                className="mt-1 flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
-              >
-                0253 691 1208
-              </a>
-            </div>
-            <div className="border-t border-white/[0.12] pt-[22px]">
-              <div className="font-mono text-[11px] tracking-[0.2em] text-ink-800 uppercase">
-                Email
-              </div>
-              <div className="mt-1 flex flex-col items-start">
-                <a
-                  href="mailto:orionpeb@gmail.com"
-                  className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
-                >
-                  orionpeb@gmail.com
-                </a>
-                <a
-                  href="mailto:mayur.orion@gmail.com"
-                  className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
-                >
-                  mayur.orion@gmail.com
+                  {PHONE_PRIMARY.display}
                 </a>
               </div>
             </div>

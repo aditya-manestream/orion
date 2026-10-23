@@ -1,14 +1,13 @@
 // Single source for Orion's contact details.
+//
+// Library copy (`library` branch): Orion's own numbers and inboxes are replaced by the Manestream demo
+// number, and the landline, second mobile and emails are left out, so nothing here reaches the client.
+// `main` keeps the real details.
 
-export const PHONE_PRIMARY = { display: "+91 70204 75455", tel: "+917020475455" };
-export const PHONE_SECONDARY = { display: "+91 85301 22776", tel: "+918530122776" };
-export const LANDLINE = { display: "0253 691 1208", tel: "02536911208" };
-export const EMAIL_PRIMARY = "orionpeb@gmail.com";
-export const EMAIL_SECONDARY = "mayur.orion@gmail.com";
+export const PHONE_PRIMARY = { display: "+91 98230 12345", tel: "+919823012345" };
 
-// TODO(launch): confirm with Orion which number is on WhatsApp.
 // Every WhatsApp link on the site reads from here.
-export const WHATSAPP_NUMBER = "917020475455";
+export const WHATSAPP_NUMBER = "919823012345";
 
 export function whatsappUrl(
   message = "Hi Orion, I'd like to discuss a pre-engineered building project."

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { whatsappUrl } from "@/lib/contact";
 
 const BUILDING_TYPES = [
   "Warehouse / industrial shed",
@@ -44,14 +45,9 @@ export function EnquiryForm() {
       String(form.get("message") || "—"),
     ];
 
-    const subject = encodeURIComponent(
-      `Project enquiry — ${form.get("name")}${
-        form.get("company") ? ` (${form.get("company")})` : ""
-      }`,
-    );
-    const body = encodeURIComponent(lines.join("\n"));
-
-    window.location.href = `mailto:orionpeb@gmail.com?subject=${subject}&body=${body}`;
+    // Library copy: the enquiry opens WhatsApp prefilled instead of the client's email inbox.
+    // Opened inside the submit handler so mobile browsers don't block it.
+    window.open(whatsappUrl(["Project enquiry", ...lines].join("\n")), "_blank", "noopener");
     setStatus("submitted");
   }
 
@@ -207,8 +203,8 @@ export function EnquiryForm() {
 
       {status === "submitted" && (
         <p className="font-mono text-xs tracking-[0.1em] text-apricot">
-          Opening your email app with these details — send it across and
-          we&apos;ll come back with a preliminary design.
+          WhatsApp opened with these details. Press send there and we&apos;ll
+          come back with a preliminary design.
         </p>
       )}
     </form>
