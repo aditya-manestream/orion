@@ -66,7 +66,7 @@ export function AnatomySection({
               delay={0.15 + i * 0.06}
               className="bg-navy p-[clamp(24px,2.4vw,34px)] transition-colors duration-300 hover:bg-navy-card-hover"
             >
-              <span className="font-mono text-xs tracking-[0.18em] text-rust">
+              <span className="font-mono text-xs tracking-[0.18em] text-apricot">
                 {system.code}
               </span>
               <h3 className="mt-3.5 font-display text-[clamp(19px,1.6vw,24px)] font-semibold tracking-[-0.015em] text-white">

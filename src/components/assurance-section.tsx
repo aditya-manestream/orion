@@ -29,17 +29,17 @@ export function AssuranceSection() {
       <div className="mx-auto max-w-[1400px] px-6 py-[clamp(74px,9vw,132px)] sm:px-8 lg:px-16">
         <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-[clamp(36px,4.4vw,72px)]">
           <Reveal className="flex h-full flex-col">
-            <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-navy uppercase">
+            <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-white uppercase">
               08 / Assurance
             </span>
             <h2 className="mt-3 text-balance font-display text-[clamp(32px,4.2vw,62px)] leading-[0.98] font-bold tracking-[-0.03em] text-white">
               Zero compromise on quality or safety
             </h2>
-            <p className="mt-[clamp(26px,3vw,40px)] max-w-[34ch] text-pretty font-display text-[clamp(20px,2.1vw,32px)] leading-[1.22] font-medium tracking-[-0.02em] text-navy">
+            <p className="mt-[clamp(26px,3vw,40px)] max-w-[34ch] text-pretty font-display text-[clamp(20px,2.1vw,32px)] leading-[1.22] font-medium tracking-[-0.02em] text-white">
               &ldquo;Fast delivery metrics mean nothing without high-precision
               execution.&rdquo;
             </p>
-            <span className="mt-[18px] block font-mono text-[11px] tracking-[0.22em] text-apricot-pale uppercase">
+            <span className="mt-[18px] block font-mono text-[11px] tracking-[0.22em] text-white uppercase">
               Orion Developers — operational commitment
             </span>
           </Reveal>
@@ -52,14 +52,14 @@ export function AssuranceSection() {
                   i === ASSURANCES.length - 1 ? "border-b" : ""
                 }`}
               >
-                <span className="pt-[5px] font-mono text-[13px] text-navy">
+                <span className="pt-[5px] font-mono text-[13px] text-white">
                   {item.code}
                 </span>
                 <div>
                   <h3 className="font-display text-[clamp(19px,1.7vw,26px)] font-semibold tracking-[-0.015em] text-white">
                     {item.title}
                   </h3>
-                  <p className="mt-1.5 text-pretty text-[clamp(14px,1.1vw,16px)] leading-[1.58] text-apricot-pale">
+                  <p className="mt-1.5 text-pretty text-[clamp(14px,1.1vw,16px)] leading-[1.58] text-white">
                     {item.body}
                   </p>
                 </div>

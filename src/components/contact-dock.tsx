@@ -56,7 +56,7 @@ export function ContactDock() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with Orion on WhatsApp"
-        className="fixed right-6 bottom-6 z-40 hidden h-14 items-center gap-2.5 bg-[#128c7e] pr-5 pl-4 font-mono text-xs tracking-[0.14em] text-white uppercase shadow-[0_10px_30px_-10px_rgba(0,0,0,0.6)] transition-[background-color,transform] duration-150 hover:bg-[#0e7368] active:scale-[0.97] md:flex"
+        className="fixed right-6 bottom-6 z-40 hidden h-14 items-center gap-2.5 bg-[#108073] pr-5 pl-4 font-mono text-xs tracking-[0.14em] text-white uppercase shadow-[0_10px_30px_-10px_rgba(0,0,0,0.6)] transition-[background-color,transform] duration-150 hover:bg-[#0e7368] active:scale-[0.97] md:flex"
       >
         <WhatsAppIcon className="h-6 w-6" />
         WhatsApp

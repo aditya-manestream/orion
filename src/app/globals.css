@@ -11,7 +11,7 @@
   --color-navy-card: #182f4c;
   --color-navy-card-hover: #1b3350;
 
-  --color-rust: #c2622e;
+  --color-rust: #b25a2a; /* library copy: was #c2622e; darkened so white text on it passes 4.5:1 */
   --color-rust-dark: #a5501f;
   --color-apricot: #e0916a;
   --color-apricot-pale: #fbe7dc;
