@@ -14,13 +14,14 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
+        compact
         kicker="Get started"
         title="Let's engineer your next building."
         intro="Send us the site, the span and the use case. We'll come back with a budget, a schedule and a preliminary design."
       />
 
       <section className="bg-navy">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(360px,1fr))] gap-[clamp(40px,5vw,80px)] px-6 py-[clamp(56px,7vw,100px)] sm:px-8 lg:px-16">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(min(360px,100%),1fr))] gap-[clamp(40px,5vw,80px)] px-6 pt-[clamp(24px,3vw,40px)] pb-[clamp(56px,7vw,100px)] sm:px-8 lg:px-16">
           <Reveal className="border border-white/[0.12] bg-navy-mid p-[clamp(28px,3.2vw,44px)]">
             <span className="font-mono text-[11px] tracking-[0.24em] text-apricot uppercase">
               Project enquiry
