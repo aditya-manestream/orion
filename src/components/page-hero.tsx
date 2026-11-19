@@ -7,11 +7,20 @@ type PageHeroProps = {
   intro?: string;
   photo?: string;
   photoAlt?: string;
+  /** Tighter hero for task pages (e.g. contact) so the content below is visible on landing. */
+  compact?: boolean;
 };
 
-export function PageHero({ kicker, title, intro, photo, photoAlt }: PageHeroProps) {
+export function PageHero({ kicker, title, intro, photo, photoAlt, compact = false }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-navy-deep pt-[clamp(140px,15vw,180px)] pb-[clamp(56px,7vw,88px)]">
+    <section
+      className={
+        compact
+          ? // Fixed header = 38px top bar + clamp(70px,6vw,88px) nav; add a short gap below it.
+            "relative overflow-hidden bg-navy-deep pt-[calc(38px+clamp(70px,6vw,88px)+clamp(20px,3vw,40px))] pb-[clamp(24px,3vw,40px)]"
+          : "relative overflow-hidden bg-navy-deep pt-[clamp(140px,15vw,180px)] pb-[clamp(56px,7vw,88px)]"
+      }
+    >
       {photo ? (
         <>
           <PhotoPlaceholder
@@ -46,7 +55,11 @@ export function PageHero({ kicker, title, intro, photo, photoAlt }: PageHeroProp
               {kicker}
             </span>
           </div>
-          <h1 className="mt-[clamp(14px,1.8vw,24px)] max-w-[20ch] text-balance font-display text-[clamp(38px,5.6vw,80px)] leading-[0.98] font-bold tracking-[-0.03em] text-white">
+          <h1
+            className={`mt-[clamp(14px,1.8vw,24px)] max-w-[20ch] text-balance font-display ${
+              compact ? "text-[clamp(32px,4vw,56px)]" : "text-[clamp(38px,5.6vw,80px)]"
+            } leading-[0.98] font-bold tracking-[-0.03em] text-white`}
+          >
             {title}
           </h1>
           {intro && (
