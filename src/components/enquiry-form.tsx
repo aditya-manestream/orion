@@ -18,7 +18,7 @@ const TIMELINES = [
 ];
 
 const inputClasses =
-  "w-full border border-white/[0.16] bg-navy px-4 py-3 text-[15px] text-white placeholder:text-ink-800 outline-none transition-colors focus:border-rust";
+  "w-full border border-white/[0.16] bg-navy px-4 py-3 text-[16px] text-white placeholder:text-ink-800 outline-none transition-colors focus:border-rust";
 
 const labelClasses =
   "font-mono text-[11px] tracking-[0.2em] text-ink-800 uppercase";

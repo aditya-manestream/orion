@@ -1,6 +1,6 @@
 import { Reveal } from "./reveal";
 
-const ADVANTAGES = [
+export const ADVANTAGES = [
   {
     code: "A.01",
     title: "Fast execution",

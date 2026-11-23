@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { PhotoPlaceholder } from "./photo-placeholder";
 import { Reveal } from "./reveal";
 
@@ -27,13 +28,16 @@ const SYSTEMS = [
 export function AnatomySection({
   kicker = "04 / Anatomy",
   id = "anatomy",
+  header,
 }: {
   kicker?: string;
   id?: string;
+  header?: ReactNode;
 }) {
   return (
     <section id={id} className="relative bg-navy-mid">
       <div className="mx-auto max-w-[1400px] px-6 py-[clamp(74px,9vw,140px)] sm:px-8 lg:px-16">
+        {header ?? (
         <Reveal className="max-w-[60ch]">
           <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
             {kicker}
@@ -46,6 +50,7 @@ export function AnatomySection({
             calculated tension and load to produce a rigid industrial space.
           </p>
         </Reveal>
+        )}
 
         <Reveal delay={0.12}>
           <PhotoPlaceholder

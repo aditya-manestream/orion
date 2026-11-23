@@ -58,7 +58,7 @@ export default async function ProjectDetailPage({
           <Reveal>
             <Link
               href="/projects"
-              className="font-mono text-[11px] tracking-[0.2em] text-apricot uppercase hover:text-white"
+              className="inline-flex min-h-11 items-center font-mono text-[11px] tracking-[0.2em] text-apricot uppercase hover:text-white"
             >
               ← All projects
             </Link>
@@ -79,7 +79,7 @@ export default async function ProjectDetailPage({
       </section>
 
       <section className="bg-navy">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(340px,1fr))] gap-[clamp(40px,5vw,80px)] px-6 py-[clamp(64px,8vw,120px)] sm:px-8 lg:px-16">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(min(340px,100%),1fr))] gap-[clamp(40px,5vw,80px)] px-6 py-[clamp(64px,8vw,120px)] sm:px-8 lg:px-16">
           <Reveal className="lg:col-span-2">
             {project.description.map((paragraph) => (
               <p

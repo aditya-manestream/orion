@@ -5,7 +5,7 @@ import { useState } from "react";
 import { PhotoPlaceholder } from "./photo-placeholder";
 import { Reveal } from "./reveal";
 
-const CONFIGURATIONS = [
+export const CONFIGURATIONS = [
   {
     code: "B.01",
     title: "Pre-Engineered Buildings",
@@ -33,7 +33,7 @@ const CONFIGURATIONS = [
   },
 ];
 
-const SECTORS = [
+export const SECTORS = [
   "Manufacturing plants",
   "Logistics & warehousing",
   "Agricultural infrastructure",

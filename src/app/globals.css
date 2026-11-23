@@ -72,3 +72,19 @@
     }
   }
 }
+
+/* Loader: feather the video's edges so its frame never shows as a box. */
+/* Browsers colour-manage video slightly differently, so no flat colour can
+   match it everywhere; a wide fade hides the difference. The artwork sits
+   inside 18-82% across and 11-86% down, clear of these ramps. */
+.loader-video {
+  mask-image:
+    linear-gradient(to right, transparent 2%, #000 15%, #000 85%, transparent 98%),
+    linear-gradient(to bottom, transparent 1%, #000 10%, #000 89%, transparent 99%);
+  mask-composite: intersect;
+}
+
+/* While the loader's logo flies in, hide the real mark it lands on. */
+[data-logo-landing] [data-brand-mark] {
+  opacity: 0;
+}

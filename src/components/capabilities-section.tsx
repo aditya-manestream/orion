@@ -1,13 +1,15 @@
 "use client";
 
-import { useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import {
   AnimatePresence,
+  animate,
   motion,
   useMotionValue,
   useMotionValueEvent,
   useScroll,
   useTransform,
+  useInView,
 } from "motion/react";
 import { CapabilitiesDrawing } from "./capabilities-drawing";
 import { Reveal } from "./reveal";
@@ -273,5 +275,134 @@ function StaticCapabilities({ kicker }: { kicker: string }) {
         </div>
       </div>
     </section>
+  );
+}
+
+// Where each stage reads best in the drawing's 0..3 timeline.
+const STAGE_POSE = [0.99, 1.9, 2.99];
+
+/**
+ * Homepage variant: no pinning. The drawing builds itself once when it comes
+ * into view; choosing a stage plays the drawing forward or back to it.
+ */
+export function CapabilitiesTabs({ kicker }: { kicker: string }) {
+  const sheetRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(sheetRef, { once: true, margin: "0px 0px -20% 0px" });
+  const reduce = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotion,
+    () => false
+  );
+  const s = useMotionValue(0);
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    if (reduce) {
+      s.set(STAGE_POSE[0]);
+      return;
+    }
+    const controls = animate(s, STAGE_POSE[0], {
+      duration: 1.8,
+      ease: [0.23, 1, 0.32, 1],
+    });
+    return () => controls.stop();
+  }, [inView, reduce, s]);
+
+  const choose = (i: number) => {
+    setActive(i);
+    if (reduce) {
+      s.set(STAGE_POSE[i]);
+      return;
+    }
+    animate(s, STAGE_POSE[i], {
+      duration: 0.6 + Math.abs(STAGE_POSE[i] - s.get()) * 0.55,
+      ease: [0.23, 1, 0.32, 1],
+    });
+  };
+
+  const cap = CAPABILITIES[active];
+
+  return (
+    <div id="capabilities">
+      <Reveal>
+        <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
+          {kicker}
+        </span>
+        <h2 className="mt-3 text-balance font-display text-[clamp(30px,3.4vw,54px)] leading-none font-semibold tracking-[-0.025em] text-white">
+          Engineered end to end
+        </h2>
+        <p className="mt-4 max-w-[52ch] text-pretty text-[clamp(15px,1.2vw,18px)] leading-[1.6] text-ink-600">
+          Three stages, one contract. Nothing handed off, nothing lost between
+          vendors.
+        </p>
+      </Reveal>
+
+      <Reveal delay={0.08} className="mt-[clamp(26px,3vw,40px)]">
+        <div
+          ref={sheetRef}
+          className="relative border border-white/[0.12] bg-navy-deep p-3 sm:p-5"
+        >
+          <div className="blueprint-grid pointer-events-none absolute inset-0 opacity-60" />
+          <div className="relative">
+            <CapabilitiesDrawing s={s} />
+          </div>
+        </div>
+        <div className="mt-3 flex items-center justify-between gap-4 font-mono text-[11px] tracking-[0.2em] text-ink-700 uppercase">
+          <span aria-live="polite">{cap.fig}</span>
+          <span className="flex-none text-apricot">{cap.code} / C.03</span>
+        </div>
+
+        <div
+          role="group"
+          aria-label="Capability stages"
+          className="mt-6 grid grid-cols-3 border-t border-white/[0.12]"
+        >
+          {CAPABILITIES.map((c, i) => (
+            <button
+              key={c.code}
+              type="button"
+              aria-pressed={active === i}
+              onClick={() => choose(i)}
+              className={`relative flex min-h-12 items-center gap-2.5 pt-4 pb-2 text-left transition-colors duration-200 sm:gap-3 ${
+                active === i ? "text-white" : "text-ink-700 hover:text-ink-300"
+              }`}
+            >
+              <span
+                className={`absolute -top-px left-0 h-[3px] transition-[width] duration-300 ${
+                  active === i ? "w-full bg-rust" : "w-0"
+                }`}
+                aria-hidden
+              />
+              <span
+                className={`flex h-8 w-8 flex-none items-center justify-center border font-mono text-[12px] transition-colors duration-200 sm:h-9 sm:w-9 ${
+                  active === i
+                    ? "border-rust-dark bg-rust-dark text-white"
+                    : "border-white/[0.2] text-ink-600"
+                }`}
+              >
+                0{i + 1}
+              </span>
+              <span className="font-display text-[16px] font-semibold tracking-[-0.01em] sm:text-[clamp(18px,1.6vw,24px)]">
+                {c.title}
+              </span>
+            </button>
+          ))}
+        </div>
+        <div className="mt-4 min-h-[200px]">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+            >
+              <StageBody cap={cap} />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </Reveal>
+    </div>
   );
 }

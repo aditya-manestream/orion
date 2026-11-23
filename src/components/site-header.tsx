@@ -107,6 +107,7 @@ export function SiteHeader() {
             <Image
               src="/orion-logo.png"
               alt="Orion Developers"
+              data-brand-mark
               width={48}
               height={68}
               className="h-[clamp(38px,3.4vw,48px)] w-auto"

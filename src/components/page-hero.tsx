@@ -7,19 +7,18 @@ type PageHeroProps = {
   intro?: string;
   photo?: string;
   photoAlt?: string;
-  /** Tighter hero for task pages (e.g. contact) so the content below is visible on landing. */
+  /** Tighter spacing and a smaller title, for pages where the content below must show on arrival. */
   compact?: boolean;
 };
 
 export function PageHero({ kicker, title, intro, photo, photoAlt, compact = false }: PageHeroProps) {
   return (
     <section
-      className={
+      className={`relative overflow-hidden bg-navy-deep ${
         compact
-          ? // Fixed header = 38px top bar + clamp(70px,6vw,88px) nav; add a short gap below it.
-            "relative overflow-hidden bg-navy-deep pt-[calc(38px+clamp(70px,6vw,88px)+clamp(20px,3vw,40px))] pb-[clamp(24px,3vw,40px)]"
-          : "relative overflow-hidden bg-navy-deep pt-[clamp(140px,15vw,180px)] pb-[clamp(56px,7vw,88px)]"
-      }
+          ? "pt-[clamp(128px,10vw,148px)] pb-[clamp(24px,2.4vw,36px)]"
+          : "pt-[clamp(140px,15vw,180px)] pb-[clamp(56px,7vw,88px)]"
+      }`}
     >
       {photo ? (
         <>
@@ -56,14 +55,22 @@ export function PageHero({ kicker, title, intro, photo, photoAlt, compact = fals
             </span>
           </div>
           <h1
-            className={`mt-[clamp(14px,1.8vw,24px)] max-w-[20ch] text-balance font-display ${
-              compact ? "text-[clamp(32px,4vw,56px)]" : "text-[clamp(38px,5.6vw,80px)]"
-            } leading-[0.98] font-bold tracking-[-0.03em] text-white`}
+            className={`max-w-[20ch] text-balance font-display leading-[0.98] font-bold tracking-[-0.03em] text-white ${
+              compact
+                ? "mt-3 text-[clamp(32px,3.8vw,56px)]"
+                : "mt-[clamp(14px,1.8vw,24px)] text-[clamp(38px,5.6vw,80px)]"
+            }`}
           >
             {title}
           </h1>
           {intro && (
-            <p className="mt-[clamp(18px,2vw,28px)] max-w-[60ch] text-pretty text-[clamp(16px,1.3vw,20px)] leading-[1.6] text-ink-600">
+            <p
+              className={`max-w-[60ch] text-pretty leading-[1.6] text-ink-600 ${
+                compact
+                  ? "mt-3 text-[clamp(16px,1.2vw,18px)]"
+                  : "mt-[clamp(18px,2vw,28px)] text-[clamp(16px,1.3vw,20px)]"
+              }`}
+            >
               {intro}
             </p>
           )}

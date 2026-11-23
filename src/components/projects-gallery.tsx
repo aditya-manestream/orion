@@ -17,13 +17,13 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
 
   return (
     <div>
-      <Reveal className="flex flex-wrap gap-3">
+      <Reveal className="-mx-6 flex gap-3 overflow-x-auto px-6 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden">
         {["All", ...sectors].map((sector) => (
           <button
             key={sector}
             type="button"
             onClick={() => setActive(sector)}
-            className={`border px-5 py-2.5 font-mono text-xs tracking-[0.14em] uppercase transition-colors duration-300 ${
+            className={`min-h-11 flex-none border px-5 py-2.5 font-mono text-xs tracking-[0.14em] uppercase transition-colors duration-300 ${
               active === sector
                 ? "border-rust bg-rust text-white"
                 : "border-white/[0.2] text-ink-500 hover:border-apricot hover:text-white"

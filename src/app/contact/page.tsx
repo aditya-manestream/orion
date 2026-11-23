@@ -14,22 +14,22 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        compact
         kicker="Get started"
         title="Let's engineer your next building."
         intro="Send us the site, the span and the use case. We'll come back with a budget, a schedule and a preliminary design."
+        compact
       />
 
       <section className="bg-navy">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(min(360px,100%),1fr))] gap-[clamp(40px,5vw,80px)] px-6 pt-[clamp(24px,3vw,40px)] pb-[clamp(56px,7vw,100px)] sm:px-8 lg:px-16">
-          <Reveal className="border border-white/[0.12] bg-navy-mid p-[clamp(28px,3.2vw,44px)]">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-[repeat(auto-fit,minmax(min(360px,100%),1fr))] gap-[clamp(40px,5vw,80px)] px-6 pt-[clamp(20px,2.4vw,32px)] pb-[clamp(56px,7vw,100px)] sm:px-8 lg:px-16">
+          <Reveal className="border border-white/[0.12] bg-navy-mid p-[clamp(22px,2.6vw,36px)]">
             <span className="font-mono text-[11px] tracking-[0.24em] text-apricot uppercase">
               Project enquiry
             </span>
             <h2 className="mt-3 text-balance font-display text-[clamp(22px,2vw,30px)] font-semibold tracking-[-0.02em] text-white">
               Tell us what you&apos;re building
             </h2>
-            <div className="mt-7">
+            <div className="mt-5">
               <EnquiryForm />
             </div>
           </Reveal>
@@ -57,13 +57,13 @@ export default function ContactPage() {
                   <div className="mt-2 flex flex-wrap gap-x-5 gap-y-2">
                     <a
                       href="tel:+917020475455"
-                      className="text-[clamp(15px,1.2vw,18px)] text-white"
+                      className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
                     >
                       +91 70204 75455
                     </a>
                     <a
                       href="tel:+918530122776"
-                      className="text-[clamp(15px,1.2vw,18px)] text-white"
+                      className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
                     >
                       +91 85301 22776
                     </a>
@@ -75,7 +75,7 @@ export default function ContactPage() {
                   </div>
                   <a
                     href="tel:02536911208"
-                    className="mt-2 block text-[clamp(15px,1.2vw,18px)] text-white"
+                    className="mt-1 flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
                   >
                     0253 691 1208
                   </a>
@@ -87,13 +87,13 @@ export default function ContactPage() {
                   <div className="mt-2 flex flex-col gap-1.5">
                     <a
                       href="mailto:orionpeb@gmail.com"
-                      className="text-[clamp(15px,1.2vw,18px)] text-white"
+                      className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
                     >
                       orionpeb@gmail.com
                     </a>
                     <a
                       href="mailto:mayur.orion@gmail.com"
-                      className="text-[clamp(15px,1.2vw,18px)] text-white"
+                      className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
                     >
                       mayur.orion@gmail.com
                     </a>

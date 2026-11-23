@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Reveal } from "../reveal";
 
@@ -71,7 +71,7 @@ type SceneApi = {
   dispose: () => void;
 };
 
-export function AnatomyModel() {
+export function AnatomyModel({ header }: { header?: ReactNode } = {}) {
   const trackRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -163,6 +163,7 @@ export function AnatomyModel() {
   return (
     <section id="anatomy" className="relative bg-navy-mid">
       <div className="mx-auto max-w-[1400px] px-6 pt-[clamp(74px,9vw,140px)] pb-[clamp(28px,3vw,44px)] sm:px-8 lg:px-16">
+        {header ?? (
         <Reveal className="max-w-[60ch]">
           <span className="font-mono text-[clamp(11px,1vw,13px)] tracking-[0.3em] text-apricot uppercase">
             04 / Anatomy
@@ -175,6 +176,7 @@ export function AnatomyModel() {
             Orion building as it goes up, member by member.
           </p>
         </Reveal>
+        )}
       </div>
 
       {/* Screen readers and search engines get the whole sequence as text. */}

@@ -1,36 +1,32 @@
 import { Hero } from "@/components/hero";
 import { ClientsStrip } from "@/components/clients-strip";
-import { PracticeSection } from "@/components/practice-section";
-import { AdvantageSection } from "@/components/advantage-section";
-import { CapabilitiesSection } from "@/components/capabilities-section";
+import { PebIntro } from "@/components/peb-intro";
 import { AnatomySection } from "@/components/anatomy-section";
 import { AnatomyModel } from "@/components/anatomy/anatomy-model";
+import { PracticeSection } from "@/components/practice-section";
+import { CapabilitiesAssuranceSection } from "@/components/assurance-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { ProcessSection } from "@/components/process-section";
-import { BuildSection } from "@/components/build-section";
-import { AssuranceSection } from "@/components/assurance-section";
-import { ContactSection } from "@/components/contact-section";
 
+// Order follows the client's sketch: hero with what we build, what is a PEB
+// beside its anatomy, practice beside advantages, capabilities beside
+// assurance, then projects, and process beside get started.
 export default function Home() {
   return (
     <>
       <Hero />
       <ClientsStrip />
-      <PracticeSection />
-      <AdvantageSection />
-      <CapabilitiesSection />
       {/* Reduced motion gets the static labelled diagram instead of the 3D build. */}
       <div className="motion-reduce:hidden">
-        <AnatomyModel />
+        <AnatomyModel header={<PebIntro />} />
       </div>
       <div className="hidden motion-reduce:block">
-        <AnatomySection id="anatomy-static" />
+        <AnatomySection id="anatomy-static" header={<PebIntro />} />
       </div>
+      <PracticeSection />
+      <CapabilitiesAssuranceSection />
       <ProjectsSection />
       <ProcessSection />
-      <BuildSection />
-      <AssuranceSection />
-      <ContactSection />
     </>
   );
 }

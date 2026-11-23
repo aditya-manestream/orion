@@ -30,7 +30,7 @@ export function ProjectCard({
         className={`pointer-events-none absolute right-[clamp(18px,2vw,30px)] bottom-[clamp(18px,2vw,28px)] left-[clamp(18px,2vw,30px)] transition-transform duration-500 ease-out group-hover:-translate-y-1`}
       >
         <span
-          className={`block font-mono tracking-[0.2em] text-apricot uppercase ${large ? "text-[11px]" : "text-[10px]"}`}
+          className="block font-mono text-[11px] tracking-[0.2em] text-apricot uppercase"
         >
           {project.category}
         </span>
@@ -53,7 +53,7 @@ export function ProjectCard({
         className={`pointer-events-none absolute font-mono tracking-[0.2em] text-white transition-opacity duration-300 group-hover:opacity-60 ${
           large
             ? "top-[clamp(18px,1.8vw,26px)] left-[clamp(20px,2vw,30px)] text-[11px]"
-            : "top-5 left-[22px] text-[10px]"
+            : "top-5 left-[22px] text-[11px]"
         }`}
       >
         {project.tag}

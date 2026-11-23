@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
+import { HeroBuildPanel } from "./hero-build-panel";
 import { PhotoPlaceholder } from "./photo-placeholder";
 
 const STATS = [
@@ -11,7 +12,7 @@ const STATS = [
   { label: "Fig. 01", value: "Completed shell, Nashik" },
 ];
 
-const HERO_BASE_DELAY = 2.7;
+const HERO_BASE_DELAY = 3.0;
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 // A negative delay means reduced motion: show the final state immediately
@@ -54,7 +55,8 @@ export function Hero() {
       {/* Brand "structure on grid": photography under the blueprint grid. */}
       <div className="blueprint-grid pointer-events-none absolute inset-0 opacity-50" />
 
-      <div className="relative mx-auto w-full max-w-[1400px] px-6 pt-[clamp(150px,16vw,210px)] pb-[clamp(30px,3vw,44px)] sm:px-8 lg:px-16">
+      <div className="relative mx-auto grid w-full max-w-[1400px] grid-cols-1 items-end gap-[clamp(36px,4vw,64px)] px-6 pt-[clamp(150px,16vw,210px)] pb-[clamp(30px,3vw,44px)] sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(340px,400px)] lg:px-16">
+        <div>
         {/* One H1: the search phrase as the label line, the brand line below. */}
         <h1>
           <motion.span
@@ -70,7 +72,7 @@ export function Hero() {
             </span>
           </motion.span>
           <motion.span
-            className="mt-[clamp(18px,2vw,28px)] block max-w-[15ch] text-balance font-display text-[clamp(46px,7.6vw,124px)] leading-[0.9] font-bold tracking-[-0.035em] text-white"
+            className="mt-[clamp(18px,2vw,28px)] block max-w-[15ch] text-balance font-display text-[clamp(46px,7.6vw,124px)] leading-[0.9] lg:text-[clamp(60px,6.4vw,108px)] font-bold tracking-[-0.035em] text-white"
             initial="hidden"
             animate="visible"
             custom={at(0.12)}
@@ -110,13 +112,23 @@ export function Hero() {
             See our projects
           </a>
         </motion.div>
+        </div>
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          custom={at(0.5)}
+          variants={fadeUp}
+        >
+          <HeroBuildPanel />
+        </motion.div>
       </div>
 
       <motion.div
         className="relative border-t border-white/[0.14] bg-navy-deep/42"
         initial="hidden"
         animate="visible"
-        custom={at(0.55)}
+        custom={at(0.65)}
         variants={fadeUp}
       >
         {/* 2x2 on phones and tablets, one ruled row on desktop. */}
