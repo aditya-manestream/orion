@@ -12,6 +12,7 @@ This folder is the working library for building websites at Manestream. Claude C
 | `templates/site-types.md` | T0 Master brief, T1 to T8 site-type prompts. |
 | `templates/sections.md` | S1 to S14 section prompts (hero, nav, proof, pricing, FAQ, CTA, form, footer, case study). |
 | `templates/motion.md` | M1 to M6 motion prompts (GSAP + Lenis, SplitText, transitions, marquee, count-up). |
+| `templates/motion-reconstruct.md` | MR: turning motion-gallery output into full prompts for the client’s industry (method, template, real-estate starter list). |
 | `templates/workflow.md` | W1 to W8: adapter, screenshot-to-original, DESIGN.md, taste pass, copy pass, mobile QA, performance, CLAUDE.md starter. |
 | `directions.md` | Direction worlds (type pairings, palettes, layout, motion, dials), hero architectures, signature moments. |
 | `sources.md` | Every source, skill and tool: cost, licence, install command, gotchas. |
