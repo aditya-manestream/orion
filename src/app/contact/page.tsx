@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { Reveal } from "@/components/reveal";
+import { EMAIL } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Request a PEB Quote",
@@ -84,20 +85,12 @@ export default function ContactPage() {
                   <div className="font-mono text-[11px] tracking-[0.2em] text-ink-800 uppercase">
                     Email
                   </div>
-                  <div className="mt-2 flex flex-col gap-1.5">
-                    <a
-                      href="mailto:orionpeb@gmail.com"
-                      className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
-                    >
-                      orionpeb@gmail.com
-                    </a>
-                    <a
-                      href="mailto:mayur.orion@gmail.com"
-                      className="inline-flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
-                    >
-                      mayur.orion@gmail.com
-                    </a>
-                  </div>
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    className="mt-1 flex min-h-11 items-center text-[clamp(15px,1.2vw,18px)] text-white"
+                  >
+                    {EMAIL}
+                  </a>
                 </div>
               </div>
             </div>

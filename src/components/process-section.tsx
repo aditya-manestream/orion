@@ -1,7 +1,6 @@
 import Link from "next/link";
 import {
-  EMAIL_PRIMARY,
-  EMAIL_SECONDARY,
+  EMAIL,
   LANDLINE,
   PHONE_PRIMARY,
   PHONE_SECONDARY,
@@ -166,12 +165,9 @@ export function ProcessSection() {
             </div>
             <div>
               <dt className={detailLabel}>Email</dt>
-              <dd className="flex flex-col items-start">
-                <a href={`mailto:${EMAIL_PRIMARY}`} className={detailLink}>
-                  {EMAIL_PRIMARY}
-                </a>
-                <a href={`mailto:${EMAIL_SECONDARY}`} className={detailLink}>
-                  {EMAIL_SECONDARY}
+              <dd>
+                <a href={`mailto:${EMAIL}`} className={detailLink}>
+                  {EMAIL}
                 </a>
               </dd>
             </div>

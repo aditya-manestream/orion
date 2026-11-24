@@ -6,6 +6,7 @@ import { ContactDock } from "@/components/contact-dock";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { EMAIL } from "@/lib/contact";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -63,7 +64,7 @@ const ORGANIZATION_LD = {
   logo: `${SITE_URL}/orion-logo.png`,
   image: `${SITE_URL}/photos/site-sunset-completed.jpg`,
   telephone: "+91-70204-75455",
-  email: "orionpeb@gmail.com",
+  email: EMAIL,
   address: {
     "@type": "PostalAddress",
     streetAddress: "1st Floor, Rushiraj Annex, D'Souza Colony, College Road",

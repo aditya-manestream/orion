@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
-  EMAIL_PRIMARY,
+  EMAIL,
   PHONE_PRIMARY,
   whatsappUrl,
 } from "@/lib/contact";
@@ -88,10 +88,10 @@ export function SiteHeader() {
               WhatsApp
             </a>
             <a
-              href={`mailto:${EMAIL_PRIMARY}`}
-              className="hidden font-mono text-[11px] tracking-[0.14em] text-ink-600 hover:text-apricot md:inline"
+              href={`mailto:${EMAIL}`}
+              className="hidden font-mono text-[11px] tracking-[0.14em] text-ink-600 hover:text-apricot xl:inline"
             >
-              {EMAIL_PRIMARY}
+              {EMAIL}
             </a>
           </div>
         </div>
@@ -207,10 +207,10 @@ export function SiteHeader() {
               </a>
             </div>
             <a
-              href={`mailto:${EMAIL_PRIMARY}`}
+              href={`mailto:${EMAIL}`}
               className="mt-6 inline-flex min-h-11 items-center font-mono text-xs tracking-[0.14em] text-ink-600"
             >
-              {EMAIL_PRIMARY}
+              {EMAIL}
             </a>
           </nav>
         </div>

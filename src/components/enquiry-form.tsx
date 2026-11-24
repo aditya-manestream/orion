@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { EMAIL } from "@/lib/contact";
 
 const BUILDING_TYPES = [
   "Warehouse / industrial shed",
@@ -51,7 +52,7 @@ export function EnquiryForm() {
     );
     const body = encodeURIComponent(lines.join("\n"));
 
-    window.location.href = `mailto:orionpeb@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
     setStatus("submitted");
   }
 

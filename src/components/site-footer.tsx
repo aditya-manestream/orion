@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { whatsappUrl } from "@/lib/contact";
+import { EMAIL, whatsappUrl } from "@/lib/contact";
 
 export function SiteFooter() {
   return (
@@ -118,10 +118,10 @@ export function SiteFooter() {
               WhatsApp
             </a>
             <a
-              href="mailto:orionpeb@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="inline-flex min-h-11 items-center text-[15px] text-ink-400"
             >
-              orionpeb@gmail.com
+              {EMAIL}
             </a>
             <Link
               href="/contact"
